@@ -1,0 +1,224 @@
+<!--------------------------Desarrollo de Aplicaciones en Red -----------------------------------
+------------------------------ Raquel González Pesqueira ---------------------------------------->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tutorial de Angular: guía básica paso a paso</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="cabecera">
+    <h1>Tutorial de Angular: guía básica paso a paso</h1>
+    <p class="subtitulo">
+      Este tutorial trata de Angular como framework para el desarrollo de aplicaciones web modernas basadas en componentes.
+    </p>
+  </header>
+
+  <nav class="indice">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#justificacion">Justificación del framework</a></li>
+      <li><a href="#instalacion">Instalación</a></li>
+      <li><a href="#primeros-pasos">Primeros pasos: Hola Mundo</a></li>
+      <li><a href="#utilizacion">Utilización del framework</a></li>
+      <li><a href="#funcionamiento">Funcionamiento interno del framework</a></li>
+      <li><a href="#conclusiones">Conclusiones</a></li>
+    </ol>
+  </nav>
+
+  <main class="contenido">
+
+    <!--Apartado 1-->
+    <section id="justificacion" class="bloque">
+  <h2>1. Justificación del framework</h2>
+
+  <p><strong>¿Para qué sirve Angular?</strong></p>
+  <p>
+    Angular es un framework de desarrollo web mantenido por Google que sirve para crear aplicaciones web de una sola página (SPA) robustas, escalables y modulares.
+  </p>
+
+  <p><strong>¿Qué aplicaciones tiene?</strong></p>
+  <ul>
+    <li>Aplicaciones empresariales de gran tamaño.</li>
+    <li>Paneles de administración y cuadros de mando.</li>
+    <li>Aplicaciones que consumen APIs REST.</li>
+    <li>Portales con mucha interacción con el cliente.</li>
+  </ul>
+
+  <p><strong>¿Sobre qué lenguajes se apoya?</strong></p>
+  <ul>
+    <li>TypeScript como lenguaje principal.</li>
+    <li>JavaScript, HTML y CSS para la interfaz del usuario.</li>
+    <li>RxJS para la programación reactiva.</li>
+  </ul>
+
+  <p><strong>¿Qué requisitos previos necesita?</strong></p>
+  <ul>
+    <li>Conocimientos básicos de JavaScript y programación web.</li>
+    <li>Node.js instalado en el sistema.</li>
+    <li>Manejo básico de terminal y de un editor como Visual Studio Code.</li>
+  </ul>
+</section>
+
+    <!--Apartado 2-->
+    <section id="instalacion" class="bloque">
+  <h2>2. Instalación de Angular</h2>
+
+  <p><strong>¿Se precisa instalación?</strong></p>
+  <p>
+    Sí. Para trabajar con Angular es necesario instalar Node.js y la herramienta de línea de comandos Angular CLI.
+  </p>
+
+  <p><strong>Versiones necesarias de Node y npm</strong></p>
+  <p>Para comprobar la versión instalada:</p>
+  <pre><code>node -v
+npm -v</code></pre>
+
+  <p><strong>Instalación de Angular CLI</strong></p>
+  <pre><code>npm install -g @angular/cli</code></pre>
+
+  <p>Para verificar que se ha instalado correctamente:</p>
+  <pre><code>ng version</code></pre>
+
+  <p><strong>Creación de un nuevo proyecto</strong></p>
+  <pre><code>ng new mi-proyecto-angular</code></pre>
+
+  <p>Esto crea la carpeta <code>mi-proyecto-angular</code> con la estructura inicial del proyecto.</p>
+
+  <p><strong>Rutas y directorios importantes</strong></p>
+  <ul>
+    <li><code>src/app/</code>: componentes y módulos principales.</li>
+    <li><code>src/assets/</code>: recursos estáticos (imágenes, iconos, etc.).</li>
+    <li><code>angular.json</code>: configuración del proyecto.</li>
+    <li><code>package.json</code>: dependencias y scripts de ejecución.</li>
+  </ul>
+
+  <p><strong>Variables de entorno</strong></p>
+  <p>
+    Angular permite definir distintos entornos en la carpeta <code>src/environments/</code>. En un tutorial básico no es necesario modificarlas, pero forman parte de la configuración del proyecto.
+  </p>
+
+  <p><strong>¿Necesita base de datos?</strong></p>
+  <p>
+    Angular se ejecuta en el navegador y no incluye una base de datos propia. Para almacenar datos se conecta a servicios y APIs externas que sí pueden usar bases de datos.
+  </p>
+</section>
+
+    <!--Apartado 3-->
+    <section id="primeros-pasos" class="bloque">
+  <h2>3. Primeros pasos: Hola Mundo</h2>
+
+  <p>Para arrancar la aplicación en modo desarrollo:</p>
+  <pre><code>cd mi-proyecto-angular
+ng serve</code></pre>
+
+  <p>Por defecto, la aplicación se sirve en <code>http://localhost:4200</code>.</p>
+
+  <p>Para mostrar un mensaje de “Hola Mundo”, se edita el archivo:</p>
+  <pre><code>src/app/app.component.html</code></pre>
+
+  <p>Ejemplo de contenido:</p>
+  <pre><code>&lt;h1&gt;Hola mundo desde Angular&lt;/h1&gt;
+&lt;p&gt;Esta es mi primera aplicación construida con este framework.&lt;/p&gt;</code></pre>
+
+  <p>Al guardar los cambios y recargar el navegador, aparecerá el mensaje en la pantalla principal.</p>
+</section>
+
+    <!--Apartado 4-->
+    <section id="utilizacion" class="bloque">
+  <h2>4. Utilización del framework</h2>
+
+  <h3>4.1. ¿Cómo empezar a crear una aplicación base?</h3>
+  <p>
+    En Angular, la aplicación se construye a partir de componentes. Para crear un componente nuevo se utiliza el Angular CLI:
+  </p>
+  <pre><code>ng generate component perfil</code></pre>
+
+  <p>Esto genera varios archivos dentro de <code>src/app/perfil/</code>, entre ellos:</p>
+  <ul>
+    <li><code>perfil.component.ts</code>: lógica del componente.</li>
+    <li><code>perfil.component.html</code>: plantilla HTML.</li>
+    <li><code>perfil.component.css</code>: estilos asociados.</li>
+  </ul>
+
+  <h3>4.2. ¿Cómo visualizar los resultados de la ejecución?</h3>
+  <p>
+    Para ver el componente desde el navegador, se usa el enrutador de Angular. En el archivo <code>src/app/app-routing.module.ts</code> se añade una ruta:
+  </p>
+  <pre><code>const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'perfil', component: PerfilComponent }
+];</code></pre>
+
+  <p>En la plantilla principal, por ejemplo en <code>app.component.html</code>, se puede definir un menú de navegación sencillo:</p>
+  <pre><code>&lt;nav&gt;
+  &lt;a routerLink="/"&gt;Inicio&lt;/a&gt;
+  &lt;a routerLink="/perfil"&gt;Perfil&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;router-outlet&gt;&lt;/router-outlet&gt;</code></pre>
+
+  <p>
+    Manteniendo corriendo <code>ng serve</code>, al entrar en <code>http://localhost:4200/perfil</code> se mostrará el contenido del componente <code>PerfilComponent</code>.
+  </p>
+</section>
+
+    <!--Apartado 5-->
+    <section id="funcionamiento" class="bloque">
+  <h2>5. Funcionamiento interno del framework</h2>
+
+  <h3>5.1. ¿Actúa sobre páginas, ficheros, secciones…?</h3>
+  <p>
+    Angular organiza la aplicación en módulos y componentes. Cada componente combina:
+  </p>
+  <ul>
+    <li>Un fichero TypeScript con la lógica (<code>.ts</code>).</li>
+    <li>Una plantilla HTML (<code>.html</code>).</li>
+    <li>Un fichero de estilos (<code>.css</code> o <code>.scss</code>).</li>
+  </ul>
+  <p>
+    El enrutador de Angular asocia rutas del navegador a componentes concretos, lo que permite navegar entre “páginas” sin recargar la web completa.
+  </p>
+
+  <h3>5.2. ¿Cómo se editan o modifican los ficheros?</h3>
+  <p>
+    La edición se realiza desde el editor de código. Para cambiar la apariencia, se modifica la plantilla HTML y los estilos; para cambiar la lógica, se edita el archivo TypeScript del componente.
+  </p>
+
+  <h3>5.3. ¿Cómo se referencian los ficheros desde otras partes?</h3>
+  <p>
+    Los componentes se referencian:
+  </p>
+  <ul>
+    <li>
+      Mediante su selector, por ejemplo <code>&lt;app-perfil&gt;&lt;/app-perfil&gt;</code>, en la plantilla de otro componente.
+    </li>
+    <li>
+      A través del enrutador, declarando rutas en <code>app-routing.module.ts</code> que apunten al componente deseado.
+    </li>
+  </ul>
+</section>
+
+    <!--Apartado 6-->
+    <section id="conclusiones" class="bloque">
+  <h2>6. Conclusiones del tutorial</h2>
+
+  <p>
+    En este tutorial se ha presentado Angular como un framework completo para el desarrollo de aplicaciones web de una sola página. Se han descrito sus objetivos, sus requisitos, el proceso de instalación y la creación de un ejemplo básico de aplicación.
+  </p>
+  <p>
+    También se ha explicado cómo se organiza internamente en componentes, módulos y rutas, y cómo se visualizan los resultados en el navegador. Con esta base, el lector puede continuar explorando características más avanzadas como el consumo de APIs, la gestión de formularios o el trabajo con servicios y almacenamiento.
+  </p>
+</section>
+
+  </main>
+
+  <footer class="pie">
+    <p>Tutorial elaborado para la asignatura Desarrollo de Aplicaciones en Red.</p>
+  </footer>
+
+</body>
+</html>

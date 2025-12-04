@@ -1,0 +1,81 @@
+/*------------------------Desarrollo de Aplicaciones en Red -----------------------------------
+------------------------------ Raquel González Pesqueira --------------------------------------*/
+
+/* Hoja de estilos CSS 
+*/
+
+* {box-sizing: border-box;
+}
+
+body {
+  font-family:system-ui,sans-serif;
+  margin:0;
+  padding:0;
+  line-height:1.6;
+  background-color:#f5f5f5;
+  color:#222;
+}
+
+.cabecera {
+  background:#0d47a1;
+  color: #fff;
+  padding:2rem 1rem;
+  text-align:center;
+}
+.subtitulo {
+  max-width:700px;
+  margin:0 auto;
+}
+.indice {
+  background:#e3f2fd;
+  padding:1.5rem 1rem;
+}
+.indice h2{
+  margin-top:0;
+}
+.indice ol {
+  margin:0;
+  padding-left:1.5rem;
+}
+.indice a {
+  color:#1565c0;
+  text-decoration:none;
+}
+.indice a:hover{
+  text-decoration:underline;
+}
+.contenido{
+  max-width:900px;
+  margin:1.5rem auto 2rem;
+  padding:0 1rem;
+}
+.bloque {
+  background:#fff;
+  padding:1.5rem;
+  margin-bottom:1.5rem;
+  border-radius: 0.5rem;
+  border:1px solid #bbdefb;
+}
+.bloque h2 {
+  margin-top:0;
+}
+
+pre {
+  background:#0d47a1;
+  color:#fff;
+  padding:1rem;
+  border-radius:0.5rem;
+  overflow-x:auto;
+  font-size:0.9rem;
+}
+code {
+  font-family: ui-monospace, SFMono-Regular,Menlo,Monaco, Consolas,
+    "Liberation Mono","Courier New",monospace;
+}
+.pie {
+  background:#0d47a1;
+  color:#fff;
+  text-align: center;
+  padding:1rem;
+  font-size: 0.875rem;
+}
